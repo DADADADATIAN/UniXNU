@@ -1,0 +1,15 @@
+# Minimal OS profile for iPadOS 17.7 (21H16, iPad7,11 / j171ap).
+# The 21H16 device kernel reports xnu-10063.142.1.700.5; Apple does not publish that
+# variant, so this profile selects the nearest public tag on the same branch
+# (xnu-10063.141.1), which the core feeds.toml already pins. The [ipsw], [kernel],
+# [payload] and [adt] tables are supplied by the nabu board.toml.
+
+["os"]
+"name" = "ipados-17.7-21H16"
+"arch" = "arm64"
+"darwin" = "23.6.0"
+"xnu_version" = "10063.141.1"
+"xnu_revision" = "d8b80295118ef25ac3a784134bcf95cd8e88109f"
+"driverkit_tag" = "xnu-10063.121.3"
+"trustcache_tag" = "xnu-8796.101.5"
+"abi" = ["IOGPUFamily", "IOHIDFamily-2031.120.4", "IOMobileGraphicsFamily"]
